@@ -15,8 +15,6 @@ const transform = (action, shift) =>
         break;
 
       default:
-        process.stderr.write('Action error');
-        // eslint-disable-next-line no-process-exit
         process.exit(1);
     }
 

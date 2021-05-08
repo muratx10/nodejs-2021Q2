@@ -4,6 +4,8 @@ const read = require('./caesar-cipher-cli/streams/read');
 const transform = require('./caesar-cipher-cli/streams/transform');
 const write = require('./caesar-cipher-cli/streams/write');
 
+const validActions = ['encode', 'decode'];
+
 program
   .storeOptionsAsProperties(false)
   .requiredOption('-a, --action <value>', 'encode/decode')
@@ -14,22 +16,26 @@ program
 
 const opts = program.opts();
 
-let shift = 0;
+let shift;
+let action;
 
 if (isNaN(Number(opts.shift))) {
-  process.stderr('Invalid shift value. Default value: 123');
-  shift = 123;
-} else {
-  shift = Number(opts.shift);
-}
+  process.stderr.write('Please enter valid shift value.');
+  process.exit(1)
+} else shift = Number(opts.shift);
+
+if (opts.action === undefined || !validActions.includes(opts.action)) {
+  process.stderr.write('Please enter valid action.');
+  process.exit(1);
+} else action = opts.action;
 
 pipeline(
   read(opts.input),
-  transform(opts.action, shift),
+  transform(action, shift),
   write(opts.output),
   err => {
     if (err) {
-      process.stderr(err);
+      process.stderr.write(err);
     }
   }
 );
