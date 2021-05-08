@@ -1,1 +1,1 @@
-Rolling Scopes - NodeJS 2021Q2
+Rolling Scopes - NodeJS
