@@ -29,7 +29,7 @@ pipeline(
   write(opts.output),
   err => {
     if (err) {
-      console.log(err);
+      process.stderr(err);
     }
   }
 );
