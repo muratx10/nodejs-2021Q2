@@ -21,7 +21,7 @@ let action;
 
 if (isNaN(Number(opts.shift))) {
   process.stderr.write('Please enter valid shift value.');
-  process.exit(1)
+  process.exit(1);
 } else shift = Number(opts.shift);
 
 if (opts.action === undefined || !validActions.includes(opts.action)) {
