@@ -15,8 +15,9 @@ program
 const opts = program.opts();
 
 let shift = 0;
+
 if (isNaN(Number(opts.shift))) {
-  console.log('Invalid shift value. Default value: 123');
+  process.stderr('Invalid shift value. Default value: 123');
   shift = 123;
 } else {
   shift = Number(opts.shift);
