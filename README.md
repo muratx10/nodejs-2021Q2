@@ -1,11 +1,5 @@
 ## Caesar cipher CLI tool
 
-**Install:**
-
-`git clone https://github.com/muratx10/nodeJS-RSS.git`
-
-`yarn install or npm install`
-
 **Use:**
 
 CLI tool accept 4 options:
