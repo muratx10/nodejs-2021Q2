@@ -1,1 +1,0 @@
-Rolling Scopes - NodeJS привет 12s
