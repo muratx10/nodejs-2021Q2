@@ -1,0 +1,47 @@
+{
+  "name": "rs-rest-service-starter",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "type": "commonjs",
+  "description": "REST service starter for RS School",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "lint": "eslint ./ --ignore-path .gitignore --fix",
+    "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace",
+    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
+  },
+  "keywords": [
+    "rs",
+    "school",
+    "rest",
+    "node",
+    "express",
+    "autotest",
+    "starter"
+  ],
+  "license": "ISC",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./test/setup.js"
+    ]
+  },
+  "dependencies": {
+    "commander": "^5.0.0",
+    "cross-env": "6.0.3",
+    "through2": "^3.0.1",
+    "uuid": "3.3.3",
+    "yamljs": "0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.2",
+    "debug": "4.1.1"
+  }
+}
