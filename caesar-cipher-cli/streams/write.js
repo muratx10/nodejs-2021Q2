@@ -2,7 +2,9 @@ const fs = require('fs');
 
 const write = file => {
   // eslint-disable-next-line no-sync
-  if (fs.existsSync(file)) {
+  const isPathExists = fs.existsSync(file);
+  
+  if (isPathExists) {
     return fs.createWriteStream(file);
   } else if (!file || file === true) {
     return process.stdout;
